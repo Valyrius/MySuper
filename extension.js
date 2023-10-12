@@ -24,7 +24,6 @@ export default class MySuper extends Extension {
     }
 
     overlay_key_changed(settings) {
-        this.viewHide();
         overlay_key_action = settings.get_string("overlay-key-action");
     }
 
