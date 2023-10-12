@@ -1,5 +1,3 @@
-# [![super-key-title][]][super-key-repo]
-
 Bind the Super-Key to a custom action
 
 ## Overview
@@ -46,6 +44,3 @@ you can log out instead.
 
 The default behaviour of <kbd>Super</kbd> is already both as key and modifier but the effect is to show the application
 overlay. This extension changes the shell code in order to run a custom command instead.
-
-[super-key-title]: https://github.com/Tommimon/super-key/blob/main/assets/title.png
-[super-key-repo]: https://github.com/Tommimon/super-key
