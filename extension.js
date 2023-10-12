@@ -6,9 +6,7 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 let signal_overlay_key = null;
 let original_signal_overlay_key = null;
 let settings = null;
-
-// Overlay-key
-var overlay_key_action = null;
+let overlay_key_action = null;
 
 export default class MySuper extends Extension {
 
@@ -17,25 +15,20 @@ export default class MySuper extends Extension {
             Main.overview.hide();
         }}
 
-    overlay_key() {
+    overlayKey() {
         this.viewHide();
         let proc = new Gio.Subprocess({argv: overlay_key_action.split(' ')});
         proc.init(null);
     }
 
-    overlay_key_changed(settings) {
-        overlay_key_action = settings.get_string("overlay-key-action");
-    }
-
     init(metadata) {}
 
     enable() {
-        settings = this.getSettings((this.metadata["settings-schema"]));
-
         // Load overlay key action and keep it up to date with settings
-        this.overlay_key_changed(settings);
+        settings = this.getSettings((this.metadata["settings-schema"]));
+        overlay_key_action = settings.get_string("overlay-key-action");
         settings.connect("changed::overlay-key-action", () => {
-            this.overlay_key_changed(settings);
+            overlay_key_action = settings.get_string("overlay-key-action");
         });
 
         // Block original overlay key handler
@@ -50,24 +43,21 @@ export default class MySuper extends Extension {
         let _a11ySettings = new Gio.Settings({ schema_id: A11Y_SCHEMA });
         signal_overlay_key = global.display.connect("overlay-key", () => {
             if (!_a11ySettings.get_boolean(STICKY_KEYS_ENABLE))
-                this.overlay_key();
+                this.overlayKey();
         });
     }
 
     disable() {
-
         // Disconnect modified overlay key handler
         if (signal_overlay_key !== null) {
             global.display.disconnect(signal_overlay_key);
             signal_overlay_key = null;
         }
-
         // Unblock original overlay key handler
         if (original_signal_overlay_key !== null) {
             global.display.unblock_signal_handler(original_signal_overlay_key);
             original_signal_overlay_key = null;
         }
-
         settings =  null;
     }
 }
