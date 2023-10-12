@@ -26,8 +26,8 @@ in the meanwhile.
 ## Installation & Setup
 
 - Download zip from the releases section
-- Extract in a folder named `super-key@tommimon.github.com`
-- Add the `super-key@tommimon.github.com` folder to GNOME extensions folder*
+- Extract in a folder named `mysuper@valyrius.github.com`
+- Add the `mysuper@valyrius.github.com` folder to GNOME extensions folder*
 - Restart the GNOME shell**
 - Open (or restart) the Extensions app (or Tweaks app)
 - Enable 'Super Key'
