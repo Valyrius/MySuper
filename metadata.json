@@ -1,5 +1,5 @@
 {
-  "description": "Fork of Super-Key GNOME extension",
+  "description": "Fork of Super-Key",
   "name": "MySuper",
   "settings-schema": "org.gnome.shell.extensions.super-key",
   "shell-version": [
