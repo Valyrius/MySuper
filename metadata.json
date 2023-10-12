@@ -1,13 +1,11 @@
 {
-  "description": "Fork of Pop Launcher Super-Key: Bind the Super-Key to a custom action",
-  "name": "Super Key",
+  "description": "Fork of Super-Key GNOME extension",
+  "name": "MySuper",
   "settings-schema": "org.gnome.shell.extensions.super-key",
   "shell-version": [
-    "42",
-    "43",
-    "44"
+    "45"
   ],
-  "url": "https://github.com/tommimon",
-  "uuid": "super-key@tommimon.github.com",
-  "version": 4
+  "url": "https://github.com/Valyrius/MySuper",
+  "uuid": "mysuper@valyrius.github.com",
+  "version": 1
 }

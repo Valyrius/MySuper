@@ -14,4 +14,4 @@ done < metadata.json
 
 # create .zip
 mkdir output
-zip output/super-key@tommimon.github.com.v"${version}".shell-extension.zip ./*.js README.md LICENSE metadata.json -r schemas
+zip output/mysuper@valyrius.github.com.v"${version}".shell-extension.zip ./*.js README.md LICENSE metadata.json -r schemas
