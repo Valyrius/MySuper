@@ -12,27 +12,19 @@ var overlay_key_action = null;
 
 export default class MySuper extends Extension {
 
-    // Overview functions
-    overview_visible() {
-        return Main.overview.visibleTarget;
-    }
-
-    overview_hide() {
-        if (Main.overview.animationInProgress) {
-            // prevent accidental re-show
-        } else if (this.overview_visible()) {
+    viewHide() {
+        if (Main.overview.visibleTarget || Main.overview.animationInProgress) {
             Main.overview.hide();
-        }
-    }
+        }}
 
     overlay_key() {
-        this.overview_hide();
+        this.viewHide();
         let proc = new Gio.Subprocess({argv: overlay_key_action.split(' ')});
         proc.init(null);
     }
 
     overlay_key_changed(settings) {
-        this.overview_hide();
+        this.viewHide();
         overlay_key_action = settings.get_string("overlay-key-action");
     }
 
