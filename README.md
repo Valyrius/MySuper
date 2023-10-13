@@ -11,7 +11,7 @@ expect almost everyone to have it installed.
 
 ## Why Super Key?
 
-The typical use is to bind another launcher of choice (such as [Albert](https://github.com/albertlauncher/albert)) to <kbd>Super</kbd>.
+The typical use is to bind another launcher of choice (such as [Rofi](https://github.com/davatorium/rofi/)) to <kbd>Super</kbd>.
 But there are really no restriction, you can set any command you want.
 
 Using gnome settings to bind shortcuts is impossible to use <kbd>Super</kbd> both as a modifier and as a proper key:
