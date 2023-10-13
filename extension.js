@@ -17,7 +17,7 @@ export default class MySuper extends Extension {
 
     overlayKey() {
         this.viewHide();
-        let proc = new Gio.Subprocess({argv: overlay_key_action.split(' ')});
+        const proc = new Gio.Subprocess({argv: overlay_key_action.split(' ')});
         proc.init(null);
     }
 
@@ -40,7 +40,7 @@ export default class MySuper extends Extension {
         // Connect modified overlay key handler
         const A11Y_SCHEMA = 'org.gnome.desktop.a11y.keyboard';
         const STICKY_KEYS_ENABLE = 'stickykeys-enable';
-        let _a11ySettings = new Gio.Settings({ schema_id: A11Y_SCHEMA });
+        const _a11ySettings = new Gio.Settings({ schema_id: A11Y_SCHEMA });
         signal_overlay_key = global.display.connect("overlay-key", () => {
             if (!_a11ySettings.get_boolean(STICKY_KEYS_ENABLE))
                 this.overlayKey();
