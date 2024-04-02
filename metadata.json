@@ -3,7 +3,8 @@
   "name": "MySuper",
   "settings-schema": "org.gnome.shell.extensions.super-key",
   "shell-version": [
-    "45"
+    "45",
+    "46"
   ],
   "url": "https://github.com/Valyrius/MySuper",
   "uuid": "mysuper@valyrius.github.com",
